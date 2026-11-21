@@ -1,9 +1,9 @@
 import { Routes, Route, NavLink } from 'react-router-dom';
-import { SakkLista } from './pages/SakkLista';
-import { EgySakk } from './pages/EgySakk';
-import { UjSakk } from './pages/UjSakk';
-import { ModSakk } from './pages/ModSakk';
-import { DelSakk } from './pages/DelSakk';
+import { JatekosLista } from './pages/JatekosLista';
+import { EgyJatekos } from './pages/EgyJatekos';
+import { UjJatekos } from './pages/UjJatekos';
+import { ModJatekos } from './pages/ModJatekos';
+import { DelJatekos } from './pages/DelJatekos';
 import './App.css'
 
 export const App = () => {
@@ -11,18 +11,18 @@ export const App = () => {
     <>
     <nav className="d-flex gap-4 p-3 fs-3">
     <NavLink to="/" className="nav-link">
-    <i className="bi bi-house-door-fill me-2"></i> Sakkozók
-    </NavLink>
-    <NavLink to="/new-chess" className="nav-link">
-    <i className="bi bi-info-circle-fill me-2"></i> Új sakkozó
+    <i className="bi bi-grid-fill me-2"></i> Játékosok
+    </NavLink> | 
+    <NavLink to="/new-player" className="nav-link">
+    <i className="bi bi-plus-square me-2"></i> Új játékos
     </NavLink>
     </nav>
     <Routes>
-      <Route path="/" element={<SakkLista />} />
-      <Route path="/chess/:chessId" element={<EgySakk />} />
-      <Route path="/new-chess" element={<UjSakk />} />
-      <Route path="/mod-chess/:chessId" element={<ModSakk />} />
-      <Route path="/del-chess/:chessId" element={<DelSakk />} />
+      <Route path="/" element={<JatekosLista />} />
+      <Route path="/player/:playerId" element={<EgyJatekos />} />
+      <Route path="/new-player" element={<UjJatekos />} />
+      <Route path="/mod-player/:playerId" element={<ModJatekos />} />
+      <Route path="/del-player/:playerId" element={<DelJatekos />} />
     </Routes>
     </>
   )
